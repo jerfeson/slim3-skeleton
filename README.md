@@ -19,6 +19,9 @@ Available service providers:
 * [Redis Cache](https://github.com/naroga/redis-cache)
 * [Jobby](https://github.com/jobbyphp/jobby)
 * [Oauth2](https://github.com/thephpleague/oauth2-server)
+* [Codeception](https://codeception.com/quickstart)
+  
+  
 
 Available middleware:
 
@@ -290,12 +293,35 @@ Remember to create your token validation business rule
 ```
 Middleware/OAuthAuthenticationToken.php
 ```
-## Changelog
 
+### Codeception test examples
+
+Have the version 79 of chrome installed. otherwise, [download](https://sites.google.com/a/chromium.org/chromedriver/downloads) your version driver 
+
+go to the test folder and run the following command. (Windows)
+```
+tests/_drivers/chromedriver_79_windows.exe --url-base=/wd/hub
+```
+go to the test folder and run the following command. (linux)
+```
+./tests/_drivers/chromedriver_79_linux --url-base=/wd/hub
+```
+go to project folder and run the following command.
+
+```
+./vendor/bin/codecept run --steps 
+```
+or 
+``` 
+php vendor/bin/codecept run --steps
+``` 
+
+## Changelog
  
 v2.6
  - Replaced Whoops and Collision packages by slashtrace that provides http and cli debug
  - Oauth2, Repository, Business
+ - Codeception
 
 V2.5
  - Allow for providers and middleware to be registered only for a given scope (dependent on app name)
